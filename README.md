@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-## CHACE NOTES
+## CHACE NOTES ---
 
 This project is a starting point for a Flutter application.
 
