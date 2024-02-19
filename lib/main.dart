@@ -1,66 +1,27 @@
-// Copyright 2014 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+/*
+Link to Flutter tut - Coding With T - https://www.youtube.com/watch?v=gbHK4dN7xJc&list=PL5jb9EteFAODi35jPznP37hnR2sTHOOTU&index=1&ab_channel=CodingWithT
+STOPPED AT | 1.5 - Organize Your Flutter Code - Flutter Fat Arrows | OK
+*/
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';// we need to import this inside all the dart files we create
+import 'screens/dashboard.dart';
 
-// OLD
-// void main() => runApp(const Center(
-//       child: Text(
-//         "CHACE Boris",
-//         textDirection: TextDirection.ltr,
-//       ),
-//     ));
+void main() => runApp(const ChaceClass1());
 
-// void main() => runApp(const MaterialApp(
-//       title: 'CHACEAPP',
-//       home: Center(
-//         child: Text(
-//           "CHACE Boris",
-//           textDirection: TextDirection.ltr,
-//         ),
-//       ),
-//     ));
-void main() => runApp(
-      MaterialApp(
-        title: 'App',
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('CHACE TEST APP'),
-            backgroundColor: Colors.cyan,
-          ),
-          body: const Center(
-            child: Text.rich(
-              TextSpan(
-                text: "default",
-                children: [
-                  TextSpan(text: '--'),
-                  TextSpan(
-                    text: 'CHACE',
-                    style: TextStyle(
-                      fontSize: 50.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'App',
-                    style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 30.0,
-                        backgroundColor: Colors.amber),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-            child: const Text("NEW"),
-          ),
-          // const Text("+"),
-        ),
-      ),
+/* shortcut to create a quick stateless(ful) class : type 'stless'('stful'), hit enter */
+class ChaceClass1 extends StatelessWidget {
+  const ChaceClass1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'App',
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false, // turns off the little debug tag that is on by default in the rendering of the app
+      home: Dashboard(),
     );
+  }
+}
 
 /* ************************************ */
 /* ORIGINAL CODE PRESENT IN THIS FILE */
