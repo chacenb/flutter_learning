@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -50,7 +51,8 @@ class Dashboard extends StatelessWidget {
   getNumber() => Random().nextInt(100);
 */
 
-  @override
+  /* Adding images basics */
+  /* @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -72,5 +74,26 @@ class Dashboard extends StatelessWidget {
         // ),
         // const Text("+"),
         );
+  }*/
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Dashboard'),
+        backgroundColor: Colors.cyan,
+      ),
+      body: Center(
+        child: IconButton(
+          // icon: Icon(Icons.alt_route_rounded,), // this is a material icon
+          icon: const Icon(FontAwesomeIcons.anchor), // this is a fontawesome icon after installing the dependency
+          color: Colors.red,
+          iconSize: 60.0,
+          onPressed: () {},
+          // splashColor: Colors.green,
+          highlightColor: Colors.lightBlueAccent,
+        ),
+      ),
+    );
   }
 }
