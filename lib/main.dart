@@ -1,6 +1,6 @@
 /*
 Link to Flutter tut - Coding With T - https://www.youtube.com/watch?v=gbHK4dN7xJc&list=PL5jb9EteFAODi35jPznP37hnR2sTHOOTU&index=1&ab_channel=CodingWithT
-STOPPED AT | 1.5 - Organize Your Flutter Code - Flutter Fat Arrows | OK
+STOPPED AT | 1.5 - OK- Organize Your Flutter Code - Flutter Fat Arrows
 */
 
 import 'package:flutter/material.dart';// we need to import this inside all the dart files we create
