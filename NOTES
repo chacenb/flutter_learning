@@ -1,0 +1,16 @@
+Adding images (2 ways to add images : 1) from local assets, 2) from internet via URL's)
+. first of all, edit pubspec.yaml file flutter > assets section
+. then click on "Pub get" on top
+1) Local asset images :
+ - Image.asset(...)
+ - Image(image: AssetImage("Path/To/Image"))
+
+2) Remote network images :
+ - Image.network(...)
+ - Image(image: NetworkImage("https://www..../chacecomlogo.png")
+
+ ---------------------------------------------------
+ Adding icons (2 types)
+ 1) Material icons (provided by default in flutter):
+
+ 2) FontAwesome icons (need dependency):

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
+/* OLD CODE STATE ---------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,5 +46,31 @@ class Dashboard extends StatelessWidget {
     );
   }
 
+
   getNumber() => Random().nextInt(100);
+*/
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Dashboard'),
+          backgroundColor: Colors.cyan,
+        ),
+        body: const Image(
+          image: AssetImage("images/chacecomlogo.png"),
+          width: 200.0,
+          // height: 800.0,
+          opacity: AlwaysStoppedAnimation(0.6),
+          repeat: ImageRepeat.repeat,
+          // alignment: Alignment.bottomRight,
+          // fit: BoxFit.contain,
+        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {},
+        //   child: const Text("NEW"),
+        // ),
+        // const Text("+"),
+        );
+  }
 }
