@@ -30,7 +30,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //   }
 
 /* ************************************************************************************* */
-/* ** ADDING BUTTONS | TRANSFORMING BUTTONS INTO ICONS | get GPS dynamically *********** */
+/* ** ADDING BUTTONS | TRANSFORMING BUTTONS INTO ICONS | get GPS dynamically  | Add APP BAR *********** */
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -43,12 +43,43 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   title: const Text('GET GPS'),
+      //   backgroundColor: Colors.blue[100],
+      // ),
+      appBar: AppBar(
+        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+        title: const Text('Get position'),
+        actions: [
+          IconButton(
+              icon: Icon(FontAwesomeIcons.locationDot, size: 20.0, color: Colors.white),
+              onPressed: () {
+                setState(() => GPSposition = getGPSpositions());
+              }),
+          IconButton(
+              icon: Icon(FontAwesomeIcons.arrowsRotate, size: 18.0, color: Colors.white),
+              onPressed: () {
+                setState(() => GPSposition = resetGPSpositions());
+              }),
+
+        ],
+        elevation: 10.0,
+        shadowColor: Colors.blueGrey,
+        surfaceTintColor: Colors.lightBlueAccent,
+        // shape: ShapeBorder,
+        backgroundColor: Colors.blueGrey,
+        // foregroundColor: Colors.red,
+        // IconThemeData? iconTheme,
+        // IconThemeData? actionsIconTheme,
+        // Clip? clipBehavior,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const ElevatedButton(
-              onPressed: null, /* this disables a button */
+              onPressed: null,
+              /* this disables a button */
               style: ButtonStyle(
                 elevation: MaterialStatePropertyAll(5.0),
                 padding: MaterialStatePropertyAll(EdgeInsets.all(10.0)),
