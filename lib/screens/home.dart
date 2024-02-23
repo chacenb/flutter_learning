@@ -47,15 +47,13 @@ class _HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                setState(() => GPSposition = getGPSpositions());
-              },
-              style: const ButtonStyle(
+            const ElevatedButton(
+              onPressed: null, /* this disables a button */
+              style: ButtonStyle(
                 elevation: MaterialStatePropertyAll(5.0),
                 padding: MaterialStatePropertyAll(EdgeInsets.all(10.0)),
               ),
-              child: const Text("GET POSITION",
+              child: Text("GET POSITION",
                   style: TextStyle(fontSize: 18.0, color: Colors.black)),
             ),
             const Padding(padding: EdgeInsets.all(8.0)),
@@ -89,15 +87,28 @@ class _HomeState extends State<Home> {
               style: (const TextStyle(fontSize: 18.0)),
             ),
             const Padding(padding: EdgeInsets.all(50.0)),
-            ElevatedButton.icon(
+            /* USE WHETHER "OutlinedButton.icon" or "ElevatedButton.icon" */
+            TextButton.icon(
               style: TextButton.styleFrom(
                 foregroundColor: Colors.blue,
               ),
               onPressed: () {
                 setState(() => GPSposition = resetGPSpositions());
               },
-              icon: const Icon(FontAwesomeIcons.ban),
+              icon: const Icon(FontAwesomeIcons.arrowsRotate, size: 12.0),
               label: const Text("Reset"),
+              // child: Text('TextButton'),
+            ),
+            // const Padding(padding: EdgeInsets.all(8.0)),
+            /* USE WHETHER "OutlinedButton.icon" or "ElevatedButton.icon" */
+            TextButton.icon(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.blue,
+              ),
+              onPressed: null,
+              /* this disables a button */
+              icon: const Icon(FontAwesomeIcons.lock, size: 12.0),
+              label: const Text("Disabled"),
               // child: Text('TextButton'),
             )
           ],
