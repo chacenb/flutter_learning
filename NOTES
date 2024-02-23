@@ -13,11 +13,15 @@ Adding images (2 ways to add images : 1) from local assets, 2) from internet via
  Adding icons (2 types)
  1) Material icons (provided by default in flutter):
 
- 2) FontAwesome icons (need dependency):
- go to pub.dev packages > identify the package needed > go to installation section > copy the snippet > paste in pubspec > press "pub get"
+ 2) FontAwesome icons (need dependency installation):
+    - go to www.pub.dev packages
+    - identify the package needed
+    - go to installation section
+    - copy the snippet & paste in project's "pubspec" file
+    - press "pub get" to install the dependency ! OK
 
 
 Icons didn't load::
 - terminate app
-- tools > flutter > Flutter clean
+- Menu : tools > flutter > Flutter clean
 - then tools > flutter > Flutter pub get
