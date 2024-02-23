@@ -49,48 +49,37 @@ class _HomeState extends State<Home> {
           children: [
             ElevatedButton(
               onPressed: () {
-                // getGPSpositions();
                 setState(() => GPSposition = getGPSpositions());
               },
               style: const ButtonStyle(
-                // shape: MaterialStatePropertyAll(StadiumBorder()),
                 elevation: MaterialStatePropertyAll(5.0),
                 padding: MaterialStatePropertyAll(EdgeInsets.all(10.0)),
-                // textStyle: MaterialStatePropertyAll(
-                //     TextStyle(fontSize: 22.0, color: Colors.black))
               ),
               child: const Text("GET POSITION",
                   style: TextStyle(fontSize: 18.0, color: Colors.black)),
-              // child: Icon(FontAwesomeIcons.locationDot,
-              //     size: 50.0, color: Colors.red[600]),
             ),
             const Padding(padding: EdgeInsets.all(8.0)),
             ElevatedButton(
               onPressed: () {
-                // getGPSpositions();
                 setState(() => GPSposition = getGPSpositions());
               },
               style: const ButtonStyle(
-                  shape: MaterialStatePropertyAll(CircleBorder()),
-                  elevation: MaterialStatePropertyAll(5.0),
-                  padding: MaterialStatePropertyAll(EdgeInsets.all(10.0)),
-                  textStyle: MaterialStatePropertyAll(
-                      TextStyle(fontSize: 100.0, color: Colors.black))),
-              // child: const Text("GET POSITION"),
+                shape: MaterialStatePropertyAll(CircleBorder()),
+                elevation: MaterialStatePropertyAll(5.0),
+                padding: MaterialStatePropertyAll(EdgeInsets.all(10.0)),
+              ),
               child: Icon(FontAwesomeIcons.locationDot,
                   size: 50.0, color: Colors.red[600]),
             ),
             const Padding(padding: EdgeInsets.all(8.0)),
             ElevatedButton.icon(
               onPressed: () {
-                // getGPSpositions();
                 setState(() => GPSposition = getGPSpositions());
               },
               style: const ButtonStyle(
                   elevation: MaterialStatePropertyAll(5.0),
                   padding: MaterialStatePropertyAll(EdgeInsets.all(10.0))),
-              // child: const Text("GET POSITION"),
-              icon: Icon(FontAwesomeIcons.locationDot,/* size: 50.0,*/ color: Colors.red[600]),
+              icon: Icon(FontAwesomeIcons.locationDot, color: Colors.red[600]),
               label: const Text("GET POSITION",
                   style: TextStyle(/*fontSize: 18.0,*/ color: Colors.black)),
             ),
@@ -99,18 +88,16 @@ class _HomeState extends State<Home> {
               "GPS position : $GPSposition",
               style: (const TextStyle(fontSize: 18.0)),
             ),
-            const Padding(padding: EdgeInsets.all(100.0)),
+            const Padding(padding: EdgeInsets.all(50.0)),
             ElevatedButton.icon(
               style: TextButton.styleFrom(
-                primary: Colors.blue,
+                foregroundColor: Colors.blue,
               ),
               onPressed: () {
-                // resetGPSpositions();
-                // setState(() => GPSposition = GPSposition);
                 setState(() => GPSposition = resetGPSpositions());
               },
-              icon: Icon(FontAwesomeIcons.ban),
-              label: Text("Reset"),
+              icon: const Icon(FontAwesomeIcons.ban),
+              label: const Text("Reset"),
               // child: Text('TextButton'),
             )
           ],
@@ -122,5 +109,6 @@ class _HomeState extends State<Home> {
   double GPSposition = 0.0;
 
   getGPSpositions() => Random().nextDouble();
+
   resetGPSpositions() => GPSposition = 0.0;
 }
