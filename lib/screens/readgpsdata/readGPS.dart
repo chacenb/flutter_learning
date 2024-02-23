@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_libserialport/flutter_libserialport.dart';
 
-void main() => runApp(ExampleApp());
+import 'cardlisttile.dart';
 
-class ExampleApp extends StatefulWidget {
+// void main() => runApp(Readgpsdata());
+
+class Readgpsdata extends StatefulWidget {
   @override
-  _ExampleAppState createState() => _ExampleAppState();
+  _ReadgpsdataState createState() => _ReadgpsdataState();
 }
 
 extension IntToString on int {
   String toHex() => '0x${toRadixString(16)}';
+
   String toPadded([int width = 3]) => toString().padLeft(width, '0');
+
   String toTransport() {
     switch (this) {
       case SerialPortTransport.usb:
@@ -25,7 +29,7 @@ extension IntToString on int {
   }
 }
 
-class _ExampleAppState extends State<ExampleApp> {
+class _ReadgpsdataState extends State<Readgpsdata> {
   var availablePorts = [];
 
   @override
@@ -79,19 +83,4 @@ class _ExampleAppState extends State<ExampleApp> {
   }
 }
 
-class CardListTile extends StatelessWidget {
-  final String name;
-  final String? value;
 
-  CardListTile(this.name, this.value);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        title: Text(value ?? 'N/A'),
-        subtitle: Text(name),
-      ),
-    );
-  }
-}

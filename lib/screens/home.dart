@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:flutter_libserialport/flutter_libserialport.dart';
 //
 // class Home extends StatelessWidget {
 //   Home({super.key});
