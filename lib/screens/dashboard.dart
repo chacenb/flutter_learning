@@ -6,7 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
-/* Working with some logic inside the code  ---------------------
+  /* ************************************************************************* */
+  /* Working with some logic inside the code  ---------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,8 +170,15 @@ class Dashboard extends StatelessWidget {
                 ],
               )),
           /* first bloc */
-          Container(
-            
+          Center(
+            child: Container(
+              child: ElevatedButton(
+                onPressed: () {
+                  getGPSpositions();
+                },
+                child: Text("get GPS"),
+              ),
+            ),
           ), /* second bloc */
         ],
       ),

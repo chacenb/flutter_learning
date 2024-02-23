@@ -5,6 +5,7 @@ STOPPED AT | 1.5 - OK- Organize Your Flutter Code - Flutter Fat Arrows
 */
 
 import 'package:flutter/material.dart';// we need to import this inside all the dart files we create
+import 'screens/home.dart';
 import 'screens/dashboard.dart';
 
 void main() => runApp(const ChaceClass1());
@@ -19,7 +20,8 @@ class ChaceClass1 extends StatelessWidget {
       title: 'App',
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false, // turns off the little debug tag that is on by default in the rendering of the app
-      home: Dashboard(),
+      home: Home(),
+      // home: Dashboard(),
     );
   }
 }
