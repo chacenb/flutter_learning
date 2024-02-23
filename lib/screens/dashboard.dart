@@ -107,59 +107,73 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          // width: 400.0,
-          height: 600.0,
-          margin: const EdgeInsets.all(8.0),
-
-          decoration: BoxDecoration(
-            color: Colors.green[100],
-            border: Border.all(color: Colors.black, width: 1.0),
-            borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-          ),
-          // alignment: Alignment.center,
-          child: ListView(
-            padding: const EdgeInsets.all(10.0),
-            children: <Widget>[
-              for (int i = 0; i < 6; i += 1) // loop to render multiple widgets
-                Container(
-                    padding: const EdgeInsets.all(10.0),
-                    margin: const EdgeInsets.all(10.0),
-                    width: 200.0,
-                    height: 150.0,
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                      // color: Colors.white,
-                      image: DecorationImage(
-                        image: AssetImage("images/chacecomlogo.png"),
-                        // fit: BoxFit.fill
-                      ),
-                      border: Border.symmetric(
-                          vertical: BorderSide(color: Colors.grey, width: 3.0),
-                          horizontal:
-                              BorderSide(color: Colors.grey, width: 3.0)),
-                      // borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-                      shape: BoxShape.circle,
-                      // doesn't work along w/ borderRadius
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.blueGrey,
-                            offset: Offset(2.0, 3.0),
-                            blurRadius: 13.0,
-                            spreadRadius: 1.0,
-                            blurStyle: BlurStyle.normal)
-                      ],
-                      // backgroundBlendMode: BlendMode.hardLight,
-                    ),
-                    child: Text(
-                      'Cont ${getNumber()}',
-                      style: const TextStyle(
-                          fontSize: 13.0, fontWeight: FontWeight.bold),
-                    )),
-              Text('GPS position is ${getGPSpositions()}',
-                  textAlign: TextAlign.center, style: TextStyle(fontSize: 23.0),)
-            ],
-          )),
+      body: ListView(
+        /* column container*/
+        children: [
+          Container(
+              // width: 400.0,
+              height: 550.0,
+              margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
+              decoration: BoxDecoration(
+                color: Colors.green[100],
+                border: Border.all(color: Colors.black, width: 1.0),
+                borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+              ),
+              // alignment: Alignment.center,
+              child: ListView(
+                padding: const EdgeInsets.all(10.0),
+                children: <Widget>[
+                  for (int i = 0;
+                      i < 6;
+                      i += 1) // loop to render multiple widgets
+                    Container(
+                        padding: const EdgeInsets.all(10.0),
+                        margin: const EdgeInsets.all(10.0),
+                        width: 200.0,
+                        height: 150.0,
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          // color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("images/chacecomlogo.png"),
+                            // fit: BoxFit.fill
+                          ),
+                          border: Border.symmetric(
+                              vertical:
+                                  BorderSide(color: Colors.grey, width: 3.0),
+                              horizontal:
+                                  BorderSide(color: Colors.grey, width: 3.0)),
+                          // borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+                          shape: BoxShape.circle,
+                          // doesn't work along w/ borderRadius
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.blueGrey,
+                                offset: Offset(2.0, 3.0),
+                                blurRadius: 13.0,
+                                spreadRadius: 1.0,
+                                blurStyle: BlurStyle.normal)
+                          ],
+                          // backgroundBlendMode: BlendMode.hardLight,
+                        ),
+                        child: Text(
+                          'Cont ${getNumber()}',
+                          style: const TextStyle(
+                              fontSize: 13.0, fontWeight: FontWeight.bold),
+                        )),
+                  Text(
+                    'GPS position is ${getGPSpositions()}',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 23.0),
+                  )
+                ],
+              )),
+          /* first bloc */
+          Container(
+            
+          ), /* second bloc */
+        ],
+      ),
     );
   }
 
