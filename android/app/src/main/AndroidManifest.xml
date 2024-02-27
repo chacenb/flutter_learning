@@ -3,6 +3,7 @@
         android:label="flutter_chace_test1"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

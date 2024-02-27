@@ -3,8 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../reusables/chacelogonumbered.dart';
+
 class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+  int counter = 0;
+
+  Dashboard({super.key, required this.counter});
 
   /* ************************************************************************* */
   /* Working with some logic inside the code  ---------------------
@@ -103,13 +107,20 @@ class Dashboard extends StatelessWidget {
   }
 */
 
+  getNextNumber() => counter += 1;
+
+  getGPSpositions() => Random().nextInt(100);
+
   /* ************************************************************************* */
   /* Working with container : Layout the canvas : OK */
+/*
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        /* column container*/
+        */
+/* column container*/ /*
+
         children: [
           Container(
               // width: 400.0,
@@ -169,19 +180,61 @@ class Dashboard extends StatelessWidget {
                   )
                 ],
               )),
-          /* first bloc */
           Center(
             child: ElevatedButton(
               onPressed: () => getGPSpositions(),
               child: const Text("get GPS"),
             ),
-          ), /* second bloc */
+          ),
         ],
       ),
     );
   }
+*/
 
-  getNumber() => Random().nextInt(100);
-
-  getGPSpositions() => Random().nextInt(100);
+  /* ************************************************************************* */
+  /* ROWS AND COLUMNS */
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+          title: const Text('Rows | Columns'),
+          actions: [
+            IconButton(
+                icon: const Icon(FontAwesomeIcons.locationDot,
+                    size: 20.0, color: Colors.white),
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(FontAwesomeIcons.arrowsRotate,
+                    size: 18.0, color: Colors.white),
+                onPressed: () => {})
+          ],
+          elevation: 6.0,
+          shadowColor: Colors.blueGrey,
+          surfaceTintColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.blueGrey,
+        ),
+        body: Container(
+          child: Row(
+            children: [
+              ChaceLogoNumbered(randomInt: getNextNumber()),
+              ChaceLogoNumbered(randomInt: getNextNumber()),
+              ChaceLogoNumbered(randomInt: getNextNumber()),
+            ],
+          ),
+        ));
+  }
 }
+
+
+/*
+* Key? key,
+* MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+* MainAxisSize mainAxisSize = MainAxisSize.max,
+* CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+* TextDirection? textDirection,
+* VerticalDirection verticalDirection = VerticalDirection.down,
+* TextBaseline? textBaseline,
+* List<Widget> children = const <Widget>[],
+* */

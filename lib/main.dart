@@ -25,9 +25,9 @@ class ChaceClass1 extends StatelessWidget {
       debugShowCheckedModeBanner: false, // turns off the little debug tag that is on by default in the rendering of the app
       // home: ReadgpsdataspWin32(title: 'Flutter Demo Home Page'),
       // home: ReadgpsdataLibSerial(),
-      // home: Home(),
       // home: ReadGPSdataLibserialport(),
-      home: Dashboard(),
+      // home: Dashboard(),
+      home: Home(),
     );
   }
 }
