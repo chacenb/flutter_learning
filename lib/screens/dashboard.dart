@@ -10,6 +10,10 @@ class Dashboard extends StatelessWidget {
 
   Dashboard({super.key, required this.counter});
 
+  getNextNumber() => counter += 1;
+
+  getGPSpositions() => Random().nextInt(100);
+
   /* ************************************************************************* */
   /* Working with some logic inside the code  ---------------------
   @override
@@ -106,10 +110,6 @@ class Dashboard extends StatelessWidget {
     );
   }
 */
-
-  getNextNumber() => counter += 1;
-
-  getGPSpositions() => Random().nextInt(100);
 
   /* ************************************************************************* */
   /* Working with container : Layout the canvas : OK */
@@ -226,7 +226,6 @@ class Dashboard extends StatelessWidget {
         ));
   }
 }
-
 
 /*
 * Key? key,

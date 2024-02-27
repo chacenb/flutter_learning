@@ -26,7 +26,7 @@ class ChaceClass1 extends StatelessWidget {
       // home: ReadgpsdataspWin32(title: 'Flutter Demo Home Page'),
       // home: ReadgpsdataLibSerial(),
       // home: ReadGPSdataLibserialport(),
-      // home: Dashboard(),
+      // home: Dashboard(counter: 0,),
       home: Home(),
     );
   }
