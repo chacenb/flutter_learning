@@ -171,13 +171,9 @@ class Dashboard extends StatelessWidget {
               )),
           /* first bloc */
           Center(
-            child: Container(
-              child: ElevatedButton(
-                onPressed: () {
-                  getGPSpositions();
-                },
-                child: Text("get GPS"),
-              ),
+            child: ElevatedButton(
+              onPressed: () => getGPSpositions(),
+              child: const Text("get GPS"),
             ),
           ), /* second bloc */
         ],

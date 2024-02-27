@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_libserialport/flutter_libserialport.dart';
+
 //
 // class Home extends StatelessWidget {
 //   Home({super.key});
@@ -52,16 +53,16 @@ class _HomeState extends State<Home> {
         title: const Text('Get position'),
         actions: [
           IconButton(
-              icon: Icon(FontAwesomeIcons.locationDot, size: 20.0, color: Colors.white),
+              icon: Icon(FontAwesomeIcons.locationDot,
+                  size: 20.0, color: Colors.white),
               onPressed: () {
                 setState(() => GPSposition = getGPSpositions());
               }),
           IconButton(
-              icon: Icon(FontAwesomeIcons.arrowsRotate, size: 18.0, color: Colors.white),
-              onPressed: () {
-                setState(() => GPSposition = resetGPSpositions());
-              }),
-
+              icon: Icon(FontAwesomeIcons.arrowsRotate,
+                  size: 18.0, color: Colors.white),
+              onPressed: () =>
+                  setState(() => GPSposition = resetGPSpositions())),
         ],
         elevation: 10.0,
         shadowColor: Colors.blueGrey,

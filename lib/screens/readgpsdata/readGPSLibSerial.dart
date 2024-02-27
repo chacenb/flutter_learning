@@ -5,9 +5,9 @@ import 'cardlisttile.dart';
 
 // void main() => runApp(Readgpsdata());
 
-class Readgpsdata extends StatefulWidget {
+class ReadgpsdataLibSerial extends StatefulWidget {
   @override
-  _ReadgpsdataState createState() => _ReadgpsdataState();
+  _ReadgpsdataLibSerialState createState() => _ReadgpsdataLibSerialState();
 }
 
 extension IntToString on int {
@@ -29,13 +29,13 @@ extension IntToString on int {
   }
 }
 
-class _ReadgpsdataState extends State<Readgpsdata> {
+class _ReadgpsdataLibSerialState extends State<ReadgpsdataLibSerial> {
   var availablePorts = [];
 
   @override
   void initState() {
     super.initState();
-    initPorts();
+    // initPorts();
   }
 
   void initPorts() {
