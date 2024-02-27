@@ -225,7 +225,6 @@ class _HomeState extends State<Home> {
     // ChaceComItem chacecomItem;
     List<ChaceComItem> chacecomItemsList = [
       ChaceComItem("Banner", "Item description lorem ipsum "),
-      ChaceComItem("Pro. Card", "Item description lorem ipsum "),
       ChaceComItem("FLyer", "Item description lorem ipsum "),
       ChaceComItem("Rollup", "Item description lorem ipsum "),
     ];
@@ -308,14 +307,39 @@ class _HomeState extends State<Home> {
                 // padding: EdgeInsets.all(8.0),
                 margin: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
                 // color: Colors.blue,
-                child: Column(
+                child: ListView(
+                  // listView add "scrolling" functionnalities to the app
                   children: [
                     for (int i = 0; i < chacecomItemsList.length; i += 1)
-                    // for (chacecomItem in chacecomItemsList)
+                      // for (chacecomItem in chacecomItemsList)
                       ChaceComItemComponent(
                         label: chacecomItemsList[i].label,
                         description: chacecomItemsList[i].description,
-                      )
+                      ),
+                    for (int i = 0; i < chacecomItemsList.length; i += 1)
+                      ListTile(
+                        leading:
+                            Image(image: AssetImage("images/chacecomlogo.png")),
+                        title: Text("ListTile title".toUpperCase(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w800,
+                                fontSize: 20.0,
+                                height: 1.0)),
+                        subtitle: Text("ListTile subtitle"),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete_outline, size: 40.0),
+                          style: ButtonStyle(
+                            iconColor: MaterialStatePropertyAll(Colors.red),
+                          ),
+                          onPressed: () => {},
+                        ),
+                        style: ListTileStyle.drawer,
+                        shape: Border(),
+                        splashColor: Colors.indigo,
+                        hoverColor: Colors.redAccent,
+                        onTap: () {},
+                        tileColor: Colors.black12,
+                      ),
                   ],
                 ),
               ),
