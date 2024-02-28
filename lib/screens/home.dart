@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chace_test1/reusables/navigationMenu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_libserialport/flutter_libserialport.dart';
 import '../reusables/chacecomitemcomponent.dart';
@@ -349,9 +350,133 @@ class _HomeState extends State<Home> {
   //     ),
   //   );
   // }
+  //
+  // /* ************************************************************************************* */
+  // /* ListView.builder : for iterations through dynamic values */
+  // /* ************************************************************************************* */
+  // @override
+  // Widget build(BuildContext context) {
+  //   // ChaceComItem chacecomItem;
+  //   List<ChaceComItem> chacecomItemsList = [
+  //     ChaceComItem("Banner", "Item description lorem ipsum ", 450),
+  //     ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99),
+  //     ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0),
+  //     ChaceComItem("Pro. card", "Item description lorem ipsum ", 1200.0),
+  //     ChaceComItem("Hat", "Item description lorem ipsum ", 890.0),
+  //     ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0),
+  //     ChaceComItem("Logo", "Item description lorem ipsum ", 80.0),
+  //     ChaceComItem("Badge", "Item description lorem ipsum ", 890.0),
+  //   ];
+  //   return Scaffold(
+  //     appBar: AppBar(
+  //       leading: IconButton(
+  //           icon: const Icon(Icons.menu),
+  //           onPressed: () {},
+  //           style:
+  //               ButtonStyle(iconColor: MaterialStatePropertyAll(Colors.white))),
+  //       title: const Text(
+  //         'ListView.builder',
+  //         style: TextStyle(color: Colors.white),
+  //       ),
+  //       elevation: 6.0,
+  //       shadowColor: Colors.blueGrey,
+  //       surfaceTintColor: Colors.red[900],
+  //       backgroundColor: Colors.red[500],
+  //     ),
+  //     body: Container(
+  //       margin: EdgeInsets.fromLTRB(13.0, 20.0, 13.0, 10.0),
+  //       child: Column(
+  //         children: [
+  //           Container(
+  //               padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+  //               height: 130.0,
+  //               decoration: BoxDecoration(
+  //                   color: Colors.white,
+  //                   borderRadius: BorderRadius.circular(20.0),
+  //                   border: Border.all(color: Colors.black26, width: 2.8),
+  //                   boxShadow: const [
+  //                     BoxShadow(
+  //                         color: Colors.black12,
+  //                         offset: Offset(1.0, 2.0),
+  //                         blurRadius: 3.0,
+  //                         spreadRadius: 1.2,
+  //                         blurStyle: BlurStyle.normal)
+  //                   ]),
+  //               child: const Row(children: [
+  //                 Expanded(
+  //                     flex: 3,
+  //                     child: Column(
+  //                         mainAxisAlignment: MainAxisAlignment.end,
+  //                         crossAxisAlignment: CrossAxisAlignment.start,
+  //                         children: [
+  //                           Text("CHACE COM",
+  //                               style: TextStyle(
+  //                                   fontSize: 14.0,
+  //                                   fontWeight: FontWeight.bold,
+  //                                   color: Colors.red,
+  //                                   letterSpacing: 1.1)),
+  //                           Text("Order Visuals",
+  //                               style: TextStyle(
+  //                                   fontSize: 40.0,
+  //                                   fontWeight: FontWeight.w800,
+  //                                   height: 0.9,
+  //                                   letterSpacing: 1.1))
+  //                         ])),
+  //                 Expanded(
+  //                     flex: 2,
+  //                     child: Column(
+  //                         mainAxisAlignment: MainAxisAlignment.end,
+  //                         children: [
+  //                           Image(
+  //                               image: AssetImage("images/chacecomlogo.png"),
+  //                               height: 90.0)
+  //                         ])),
+  //               ])), // Header of the page
+  //           Expanded(
+  //             flex: 2,
+  //             child: Container(
+  //               margin: EdgeInsets.only(top: 10.0),
+  //               //  ListView.builder helps generate list of scrollable items
+  //               child: ListView.builder(
+  //                   padding: EdgeInsets.fromLTRB(0, 0, 0, 20.0),
+  //                   itemCount: chacecomItemsList.length,
+  //                   itemBuilder: (context, i) {
+  //                     /* we can return a ListTile ()*/
+  //                     // return ListTile(
+  //                     //   leading: CircleAvatar(
+  //                     //       child: Text(chacecomItemsList[i].label[0])),
+  //                     //   title: Text(chacecomItemsList[i].label),
+  //                     //   subtitle: Text(chacecomItemsList[i].description),
+  //                     //   trailing: Text(
+  //                     //       "${chacecomItemsList[i].price.toString()} XAF"),
+  //                     //   tileColor: Colors.grey.shade200,
+  //                     //   style: ListTileStyle.drawer,
+  //                     // );
+  //
+  //                     /* Or return a Custom component ()*/
+  //                     return ChaceComItemComponent(
+  //                         label: chacecomItemsList[i].label,
+  //                         description: chacecomItemsList[i].description,
+  //                         price: chacecomItemsList[i].price);
+  //                   }),
+  //               // child: ListView(
+  //               //   // listView add "scrolling" functionnalities to the app
+  //               //   children: [
+  //               //     for (int i = 0; i < chacecomItemsList.length; i += 1)
+  //               //       ChaceComItemComponent(
+  //               //           label: chacecomItemsList[i].label,
+  //               //           description: chacecomItemsList[i].description),
+  //               //   ],
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
   /* ************************************************************************************* */
-  /* ListView.builder : for iterations through dynamic values */
+  /* Navigation drawer */
   /* ************************************************************************************* */
   @override
   Widget build(BuildContext context) {
@@ -368,19 +493,24 @@ class _HomeState extends State<Home> {
     ];
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-            style:
-                ButtonStyle(iconColor: MaterialStatePropertyAll(Colors.white))),
+        // leading: IconButton(
+        //     icon: const Icon(Icons.menu),
+        //     onPressed: () {},
+        //     style:
+        //     ButtonStyle(iconColor: MaterialStatePropertyAll(Colors.white))),
         title: const Text(
-          'ListView.builder',
+          'Navigation Drawer',
           style: TextStyle(color: Colors.white),
         ),
         elevation: 6.0,
         shadowColor: Colors.blueGrey,
         surfaceTintColor: Colors.red[900],
         backgroundColor: Colors.red[500],
+      ),
+      drawer: Drawer(
+        surfaceTintColor: Colors.red,
+        width: 250.0,
+        child: NavigationMenu(),
       ),
       body: Container(
         margin: EdgeInsets.fromLTRB(13.0, 20.0, 13.0, 10.0),
@@ -427,7 +557,7 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Image(
-                                image: AssetImage("images/chacecomlogo.png"),
+                                image: AssetImage("images/logochacecomcolor.png"),
                                 height: 90.0)
                           ])),
                 ])), // Header of the page
