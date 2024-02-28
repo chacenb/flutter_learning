@@ -42,6 +42,8 @@ class NavigationMenu extends StatelessWidget {
     return ListView(
       // listView add "scrolling" functionnalities to the app
       children: [
+
+        // THIS IS A CLASS TO LOAD A PREBUILT DRAWEER HEADER
         UserAccountsDrawerHeader(
           currentAccountPicture:
               Image(image: AssetImage("images/logochacecomwhite.png")),
@@ -70,6 +72,8 @@ class NavigationMenu extends StatelessWidget {
             //     bottomRight: Radius.circular(10.0))
           ),
         ),
+
+        // THIS IS A CLASS TO CREATE MANUALLY A DRAWEER HEADER
         // DrawerHeader(
         //   padding: EdgeInsets.all(0.0),
         //   child: Container(

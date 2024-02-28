@@ -493,22 +493,15 @@ class _HomeState extends State<Home> {
     ];
     return Scaffold(
       appBar: AppBar(
-        // leading: IconButton(
-        //     icon: const Icon(Icons.menu),
-        //     onPressed: () {},
-        //     style:
-        //     ButtonStyle(iconColor: MaterialStatePropertyAll(Colors.white))),
-        title: const Text(
-          'Navigation Drawer',
-          style: TextStyle(color: Colors.white),
-        ),
+        foregroundColor: Colors.white,
+        title: const Text('Navigation Drawer'),
         elevation: 6.0,
         shadowColor: Colors.blueGrey,
         surfaceTintColor: Colors.red[900],
         backgroundColor: Colors.red[500],
       ),
       drawer: Drawer(
-        surfaceTintColor: Colors.red,
+        surfaceTintColor: Colors.red.shade400,
         width: 250.0,
         child: NavigationMenu(),
       ),
@@ -557,7 +550,8 @@ class _HomeState extends State<Home> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Image(
-                                image: AssetImage("images/logochacecomcolor.png"),
+                                image:
+                                    AssetImage("images/logochacecomcolor.png"),
                                 height: 90.0)
                           ])),
                 ])), // Header of the page
