@@ -36,12 +36,12 @@ class _ChaceComItemComponentState extends State<ChaceComItemComponent> {
       child: Row(
         children: [
           Expanded(
-              flex: 1,
-              child: Image(
-                image: AssetImage("images/chacecomlogo.png"),
-                height: 50.0,
-              )),
-          Padding(padding: EdgeInsets.only(left: 3.0)),
+            flex: 1,
+            child: CircleAvatar(child: Text(widget.label[0])),
+            // child: Image(
+            //     image: AssetImage("images/chacecomlogo.png"), height: 50.0),
+          ),
+          const Padding(padding: EdgeInsets.only(left: 3.0)),
           Expanded(
               flex: 3,
               child: Column(
@@ -49,26 +49,26 @@ class _ChaceComItemComponentState extends State<ChaceComItemComponent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(widget.label.toUpperCase(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 16.0,
                           height: 1.0)),
                   Text(widget.description,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.italic,
                           color: Colors.black38,
                           fontSize: 11))
                 ],
               )),
-          Padding(padding: EdgeInsets.only(left: 5.0)),
+          const Padding(padding: EdgeInsets.only(left: 5.0)),
           Expanded(flex: 2, child: Text("${widget.price.toString()} XAF")),
           Expanded(
               flex: 1,
               child: IconButton(
-                icon: Icon(Icons.delete_outline, size: 40.0),
-                style: ButtonStyle(
-                  iconColor: MaterialStatePropertyAll(Colors.red),
+                icon: const Icon(Icons.visibility, size: 25.0),
+                style: const ButtonStyle(
+                  iconColor: MaterialStatePropertyAll(Colors.redAccent),
                 ),
                 onPressed: () => {},
               ))

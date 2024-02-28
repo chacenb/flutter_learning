@@ -357,9 +357,14 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     // ChaceComItem chacecomItem;
     List<ChaceComItem> chacecomItemsList = [
-      ChaceComItem("Bannerx", "Item description lorem ipsum ", 450),
-      ChaceComItem("FLyerx", "Item description lorem ipsum ", 80.99),
-      ChaceComItem("Rollupx", "Item description lorem ipsum ", 1890.0),
+      ChaceComItem("Banner", "Item description lorem ipsum ", 450),
+      ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99),
+      ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0),
+      ChaceComItem("Pro. card", "Item description lorem ipsum ", 1200.0),
+      ChaceComItem("Hat", "Item description lorem ipsum ", 890.0),
+      ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0),
+      ChaceComItem("Logo", "Item description lorem ipsum ", 80.0),
+      ChaceComItem("Badge", "Item description lorem ipsum ", 890.0),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -387,16 +392,15 @@ class _HomeState extends State<Home> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0),
-                    border: Border.all(color: Colors.black26, width: 2.8)
-                    // boxShadow: const [
-                    //   BoxShadow(
-                    //       color: Colors.black12,
-                    //       offset: Offset(1.6, 2.8),
-                    //       blurRadius: 3.0,
-                    //       spreadRadius: 0.8,
-                    //       blurStyle: BlurStyle.normal)
-                    // ],
-                    ),
+                    border: Border.all(color: Colors.black26, width: 2.8),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(1.0, 2.0),
+                          blurRadius: 3.0,
+                          spreadRadius: 1.2,
+                          blurStyle: BlurStyle.normal)
+                    ]),
                 child: const Row(children: [
                   Expanded(
                       flex: 3,
@@ -430,16 +434,29 @@ class _HomeState extends State<Home> {
             Expanded(
               flex: 2,
               child: Container(
-                margin: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
+                margin: EdgeInsets.only(top: 10.0),
                 //  ListView.builder helps generate list of scrollable items
                 child: ListView.builder(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20.0),
                     itemCount: chacecomItemsList.length,
                     itemBuilder: (context, i) {
+                      /* we can return a ListTile ()*/
+                      // return ListTile(
+                      //   leading: CircleAvatar(
+                      //       child: Text(chacecomItemsList[i].label[0])),
+                      //   title: Text(chacecomItemsList[i].label),
+                      //   subtitle: Text(chacecomItemsList[i].description),
+                      //   trailing: Text(
+                      //       "${chacecomItemsList[i].price.toString()} XAF"),
+                      //   tileColor: Colors.grey.shade200,
+                      //   style: ListTileStyle.drawer,
+                      // );
+
+                      /* Or return a Custom component ()*/
                       return ChaceComItemComponent(
                           label: chacecomItemsList[i].label,
                           description: chacecomItemsList[i].description,
                           price: chacecomItemsList[i].price);
-                      Text(chacecomItemsList[i].label);
                     }),
                 // child: ListView(
                 //   // listView add "scrolling" functionnalities to the app
