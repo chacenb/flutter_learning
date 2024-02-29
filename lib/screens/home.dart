@@ -476,7 +476,7 @@ class _HomeState extends State<Home> {
   // }
 
   /* ************************************************************************************* */
-  /* Navigation drawer  && bottomNavigationBar */
+  /* Navigation drawer  && bottomNavigationBar VID 2.11 */
   /* ************************************************************************************* */
   Widget build(BuildContext context) {
     @override
@@ -512,7 +512,7 @@ class _HomeState extends State<Home> {
         width: 233.0,
         child: NavigationMenu(),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
@@ -525,46 +525,47 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomAppBar(
         notchMargin: 6.0,
         padding: EdgeInsets.symmetric(vertical: 0.1),
-        height: 50.0,
+        height: 48.0,
         color: Colors.red,
         shadowColor: Colors.black,
         shape: CircularNotchedRectangle(),
         // OR AutomaticNotchedShape(RoundedRectangleBorder(), CircleBorder()),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             IconButton(
               onPressed: () {},
               style: const ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Colors.white),
               ),
-              icon: Icon(Icons.home, size: 25.0),
-              // child: Icon(Icons.bookmark, size: 25.0),
+              icon: Icon(Icons.home),
+              // child: Icon(Icons.bookmark),
             ),
             IconButton(
               onPressed: () {},
               style: const ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Colors.white),
               ),
-              icon: Icon(Icons.bookmark, size: 25.0),
+              icon: Icon(Icons.bookmark),
               // child: Icon(Icons.bookmark, size: 25.0),
+            ),
+            Padding(padding: EdgeInsets.all(30.0)),
+            IconButton(
+              onPressed: () {},
+              style: const ButtonStyle(
+                foregroundColor: MaterialStatePropertyAll(Colors.white),
+              ),
+              icon: Icon(Icons.camera_rounded),
+              // child: Icon(Icons.bookmark),
             ),
             IconButton(
               onPressed: () {},
               style: const ButtonStyle(
                 foregroundColor: MaterialStatePropertyAll(Colors.white),
               ),
-              icon: Icon(Icons.camera_rounded, size: 25.0),
-              // child: Icon(Icons.bookmark, size: 25.0),
-            ),
-            IconButton(
-              onPressed: () {},
-              style: const ButtonStyle(
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-              ),
-              icon: Icon(Icons.keyboard_voice_sharp, size: 25.0),
-              // child: Icon(Icons.bookmark, size: 25.0),
+              icon: Icon(Icons.keyboard_voice_sharp),
+              // child: Icon(Icons.bookmark),
             ),
 
             // Container(
@@ -612,7 +613,6 @@ class _HomeState extends State<Home> {
             //     )
             //   ],
             // ),
-            Padding(padding: EdgeInsets.all(30.0))
           ],
         ),
       ),
