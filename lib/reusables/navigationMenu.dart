@@ -45,6 +45,15 @@ class NavigationMenu extends StatelessWidget {
 
         // THIS IS A CLASS TO LOAD A PREBUILT DRAWEER HEADER
         UserAccountsDrawerHeader(
+          // margin: EdgeInsets.all(30.0),
+          // currentAccountPictureSize: Size.square(40.0),
+          otherAccountsPicturesSize: Size.square(13.0),
+
+          otherAccountsPictures: [
+            Icon(Icons.account_box_rounded),
+            Icon(Icons.account_box_rounded),
+            Icon(Icons.account_box_rounded),
+          ],
           currentAccountPicture:
               Image(image: AssetImage("images/logochacecomwhite.png")),
           // currentAccountPictureSize: Size(60.0, 60.0),
@@ -52,15 +61,15 @@ class NavigationMenu extends StatelessWidget {
             "CHACE COM",
             style: TextStyle(
                 fontSize: 22,
-                fontWeight: FontWeight.w600,
-                height: 1.2,
+                fontWeight: FontWeight.w800,
+                height: 1.0,
                 color: Colors.white),
           ),
           accountEmail: Text(
             "Graphics at the center of your business",
             style: TextStyle(
                 color: Colors.white70,
-                height: 1.1,
+                height: 1.0,
                 fontSize: 11,
                 fontWeight: FontWeight.w400,
                 fontStyle: FontStyle.italic),
