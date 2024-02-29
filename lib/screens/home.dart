@@ -534,39 +534,48 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            IconButton(
-              onPressed: () {},
-              style: const ButtonStyle(
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-              ),
-              icon: Icon(Icons.home),
-              // child: Icon(Icons.bookmark),
-            ),
-            IconButton(
-              onPressed: () {},
-              style: const ButtonStyle(
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-              ),
-              icon: Icon(Icons.bookmark),
-              // child: Icon(Icons.bookmark, size: 25.0),
-            ),
-            Padding(padding: EdgeInsets.all(30.0)),
-            IconButton(
-              onPressed: () {},
-              style: const ButtonStyle(
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-              ),
-              icon: Icon(Icons.camera_rounded),
-              // child: Icon(Icons.bookmark),
-            ),
-            IconButton(
-              onPressed: () {},
-              style: const ButtonStyle(
-                foregroundColor: MaterialStatePropertyAll(Colors.white),
-              ),
-              icon: Icon(Icons.keyboard_voice_sharp),
-              // child: Icon(Icons.bookmark),
-            ),
+            Expanded(
+                flex: 2,
+                child: IconButton(
+                  onPressed: () {},
+                  style: const ButtonStyle(
+                    foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  icon: Icon(Icons.home),
+                  // child: Icon(Icons.bookmark),
+                )),
+            Expanded(
+                flex: 2,
+                child: IconButton(
+                  onPressed: () {},
+                  style: const ButtonStyle(
+                    foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  icon: Icon(Icons.bookmark),
+                  // child: Icon(Icons.bookmark, size: 25.0),
+                )),
+            // Padding(padding: EdgeInsets.all(30.0)),
+            const Spacer(flex: 3),
+            Expanded(
+                flex: 2,
+                child: IconButton(
+                  onPressed: () {},
+                  style: const ButtonStyle(
+                    foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  icon: Icon(Icons.camera_rounded),
+                  // child: Icon(Icons.bookmark),
+                )),
+            Expanded(
+                flex: 2,
+                child: IconButton(
+                  onPressed: () {},
+                  style: const ButtonStyle(
+                    foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  icon: Icon(Icons.keyboard_voice_sharp),
+                  // child: Icon(Icons.bookmark),
+                )),
 
             // Container(
             //   decoration: BoxDecoration(color: Colors.green),
