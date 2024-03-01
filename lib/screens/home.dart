@@ -28,6 +28,8 @@ class _HomeState extends State<Home> {
 
   returnVal(int i) => i;
 
+  onIconPress(String pressedIcon) => print("## pressed icon is ${pressedIcon}");
+
   /* ************************************************************************************* */
   /* ADDING BUTTONS | TRANSFORMING BUTTONS INTO ICONS | get GPS dynamically  | Add APP BAR *********** */
   /* ************************************************************************************* */
@@ -501,11 +503,15 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
-        title: const Text('Navigation side & bottom'),
+        title: const Text('Side & Bottom Nav'),
         elevation: 6.0,
         shadowColor: Colors.blueGrey,
         surfaceTintColor: Colors.red[900],
         backgroundColor: Colors.red[500],
+        actions: [
+          IconButton(onPressed: () => onIconPress("search"), icon: Icon(Icons.search)),
+          IconButton(onPressed: () => onIconPress("more_vert"), icon: Icon(Icons.more_vert)),
+        ],
       ),
       drawer: Drawer(
         surfaceTintColor: Colors.red.shade400,
@@ -537,23 +543,23 @@ class _HomeState extends State<Home> {
             Expanded(
                 flex: 2,
                 child: IconButton(
-                  onPressed: () {},
-                  style: const ButtonStyle(
-                    foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  icon: Icon(Icons.home),
-                  // child: Icon(Icons.bookmark),
-                )),
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      foregroundColor: MaterialStatePropertyAll(Colors.white),
+                    ),
+                    icon: Icon(Icons.home)
+                    // child: Icon(Icons.bookmark),
+                    )),
             Expanded(
                 flex: 2,
                 child: IconButton(
-                  onPressed: () {},
-                  style: const ButtonStyle(
-                    foregroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                  icon: Icon(Icons.bookmark),
-                  // child: Icon(Icons.bookmark, size: 25.0),
-                )),
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      foregroundColor: MaterialStatePropertyAll(Colors.white),
+                    ),
+                    icon: Icon(Icons.bookmark)
+                    // child: Icon(Icons.bookmark, size: 25.0),
+                    )),
             // Padding(padding: EdgeInsets.all(30.0)),
             const Spacer(flex: 3),
             Expanded(
@@ -646,52 +652,26 @@ class _HomeState extends State<Home> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20.0),
                     border: Border.all(color: Colors.black26, width: 2.8),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: Colors.black12,
-                          offset: Offset(1.0, 2.0),
-                          blurRadius: 3.0,
-                          spreadRadius: 1.2,
-                          blurStyle: BlurStyle.normal)
-                    ]),
+                    boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.0, 2.0), blurRadius: 3.0, spreadRadius: 1.2, blurStyle: BlurStyle.normal)]),
                 child: const Row(children: [
                   Expanded(
                       flex: 3,
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("CHACE COM",
-                                style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.red,
-                                    letterSpacing: 1.1)),
-                            Text("Order Visuals",
-                                style: TextStyle(
-                                    fontSize: 40.0,
-                                    fontWeight: FontWeight.w800,
-                                    height: 0.9,
-                                    letterSpacing: 1.1))
-                          ])),
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Image(
-                                image:
-                                    AssetImage("images/logochacecomcolor.png"),
-                                height: 90.0)
-                          ])),
-                ])), /// Header of the page
+                      child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
+                        Text("CHACE COM", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 1.1)),
+                        Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 1.1))
+                      ])),
+                  Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [Image(image: AssetImage("images/logochacecomcolor.png"), height: 90.0)])),
+                ])),
+
+            /// Header of the page
             Expanded(
               flex: 2,
               child: Container(
                 margin: const EdgeInsets.only(top: 10.0),
+
                 ///  ListView.builder helps generate list of scrollable items
                 child: ListView.builder(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 20.0),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 30.0),
                     itemCount: chacecomItemsList.length,
                     itemBuilder: (context, i) {
                       /// we can return a ListTile ()
@@ -707,10 +687,7 @@ class _HomeState extends State<Home> {
                       // );
 
                       /// Or return a Custom component ()
-                      return ChaceComItemComponent(
-                          label: chacecomItemsList[i].label,
-                          description: chacecomItemsList[i].description,
-                          price: chacecomItemsList[i].price);
+                      return ChaceComItemComponent(label: chacecomItemsList[i].label, description: chacecomItemsList[i].description, price: chacecomItemsList[i].price);
                     }),
                 // child: ListView(
                 //   // listView add "scrolling" functionnalities to the app
@@ -720,7 +697,9 @@ class _HomeState extends State<Home> {
                 //           label: chacecomItemsList[i].label,
                 //           description: chacecomItemsList[i].description),
                 //   ],
-              ), /// We iterate using ListView.Builder in dataset of chace com items
+              ),
+
+              /// We iterate using ListView.Builder in dataset of chace com items
             ),
           ],
         ),
