@@ -3,46 +3,31 @@ import 'package:flutter/material.dart';
 import '../types/types.dart';
 import 'chacecomitemcomponent.dart';
 
-class NavigationMenu extends StatelessWidget {
+class SideNavigationMenu extends StatelessWidget {
   List<NavigationMenuItem> navigationMenuItems = [
-    NavigationMenuItem(
-        Icon(Icons.home), "home", "Item description lorem ipsum "),
-    NavigationMenuItem(
-        Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(
-        Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(
-        Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(
-        Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(
-        Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About",
-        "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.home), "home", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
   ];
 
-  NavigationMenu({super.key});
+  SideNavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       // listView add "scrolling" functionnalities to the app
       children: [
-
         // THIS IS A CLASS TO LOAD A PREBUILT DRAWEER HEADER
         UserAccountsDrawerHeader(
           // margin: EdgeInsets.all(30.0),
@@ -54,25 +39,15 @@ class NavigationMenu extends StatelessWidget {
             Icon(Icons.account_box_rounded),
             Icon(Icons.account_box_rounded),
           ],
-          currentAccountPicture:
-              Image(image: AssetImage("images/logochacecomwhite.png")),
+          currentAccountPicture: Image(image: AssetImage("images/logochacecomwhite.png")),
           // currentAccountPictureSize: Size(60.0, 60.0),
           accountName: Text(
             "CHACE COM",
-            style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w800,
-                height: 1.0,
-                color: Colors.white),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, height: 1.0, color: Colors.white),
           ),
           accountEmail: Text(
             "Graphics at the center of your business",
-            style: TextStyle(
-                color: Colors.white70,
-                height: 1.0,
-                fontSize: 11,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.italic),
+            style: TextStyle(color: Colors.white70, height: 1.0, fontSize: 11, fontWeight: FontWeight.w400, fontStyle: FontStyle.italic),
           ),
           decoration: BoxDecoration(
             color: Colors.red.shade700,
@@ -120,11 +95,7 @@ class NavigationMenu extends StatelessWidget {
         //   ),
         // ),
         for (int i = 0; i < navigationMenuItems.length; i += 1)
-          ListTile(
-              leading: navigationMenuItems[i].icon,
-              title: Text(navigationMenuItems[i].label),
-              onTap: () =>
-                  print("Getting to ${navigationMenuItems[i].label} page")),
+          ListTile(leading: navigationMenuItems[i].icon, title: Text(navigationMenuItems[i].label), onTap: () => print("Getting to ${navigationMenuItems[i].label} page")),
       ],
     );
   }
