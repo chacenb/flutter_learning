@@ -69,6 +69,7 @@ flutter:
     - images/ic_launcher.png
     - images/logochacecomwhite.png
     - images/logochacecomcolor.png
+    - images/editlogochacecom.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

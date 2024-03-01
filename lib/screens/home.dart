@@ -2,12 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chace_test1/reusables/sideNavigationMenu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_libserialport/flutter_libserialport.dart';
-import '../reusables/chacecomitems.dart';
+import '../components/chacecomitems.dart';
+import '../components/sideNavigationMenu.dart';
 import '../types/types.dart';
-import '../reusables/chacelogonumbered.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -693,7 +692,7 @@ class _HomeState extends State<Home> {
   // }
 
   /* ************************************************************************************* */
-  /* Flutter Stack and Positioned Widget 2023 - Flutter Basics */
+  /* Flutter Stack + Positioned Widget 2023 - Flutter Basics */
   /* ************************************************************************************* */
   @override
   Widget build(BuildContext context) {
@@ -713,29 +712,29 @@ class _HomeState extends State<Home> {
       drawer: Drawer(
         surfaceTintColor: Colors.red.shade400,
         width: 250.0,
-        child: SideNavigationMenu(),
 
         ///custom Navigation side drawer
+        child: SideNavigationMenu(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
         // mini: true,
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         tooltip: 'Add item',
         onPressed: () {},
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 6.0,
-        padding: EdgeInsets.symmetric(vertical: 0.1),
+        padding: const EdgeInsets.symmetric(vertical: 0.1),
         height: 48.0,
         color: Colors.red,
         shadowColor: Colors.black,
-        shape: CircularNotchedRectangle(),
 
-        /// OR AutomaticNotchedShape(RoundedRectangleBorder(), CircleBorder()),
+        /// OR use AutomaticNotchedShape(RoundedRectangleBorder(), CircleBorder()),
+        shape: CircularNotchedRectangle(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -782,90 +781,60 @@ class _HomeState extends State<Home> {
                   icon: Icon(Icons.keyboard_voice_sharp),
                   // child: Icon(Icons.bookmark),
                 )),
-
-            // Container(
-            //   decoration: BoxDecoration(color: Colors.green),
-            // ),
-            //
-            //   children: [
-            //     Icon(
-            //       Icons.camera_rounded,
-            //       color: Colors.white,
-            //       size: 25.0,
-            //     ),
-            //     Text(
-            //       "shoot",
-            //       style: TextStyle(
-            //           fontSize: 11.0, height: 1.1, color: Colors.white),
-            //     )
-            //   ],
-            // ),
-            // Column(
-            //   children: [
-            //     Icon(
-            //       Icons.home,
-            //       color: Colors.white,
-            //       size: 25.0,
-            //     ),
-            //     Text(
-            //       "home",
-            //       style: TextStyle(
-            //           fontSize: 11.0, height: 1.1, color: Colors.white),
-            //     )
-            //   ],
-            // ),
-            // Column(
-            //   children: [
-            //     Icon(
-            //       Icons.keyboard_voice_sharp,
-            //       color: Colors.white,
-            //       size: 25.0,
-            //     ),
-            //     Text(
-            //       "record",
-            //       style: TextStyle(
-            //           fontSize: 11.0, height: 1.1, color: Colors.white),
-            //     )
-            //   ],
-            // ),
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBarType.fixed,
-      //   backgroundColor: Colors.red,
-      //   items: [
-      //     BottomNavigationBarItem(label: "", icon: Icon(Icons.add)),
-      //     BottomNavigationBarItem(label: "", icon: Icon(Icons.add)),
-      //     BottomNavigationBarItem(label: "", icon: Icon(Icons.add)),
-      //     BottomNavigationBarItem(label: "", icon: Icon(Icons.add)),
-      //   ],
-      // ),
       body: ListView(
         padding: const EdgeInsets.all(10.0),
         children: [
-          /// Header of the page
+          /// stack Header of the page
           Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-              height: 130.0,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.0),
-                  border: Border.all(color: Colors.black26, width: 2.8),
-                  boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.0, 2.0), blurRadius: 3.0, spreadRadius: 1.2, blurStyle: BlurStyle.normal)]),
-              child: const Row(children: [
-                Expanded(
-                    flex: 3,
-                    child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text("CHACE COM", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 1.1)),
-                      Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 1.1))
-                    ])),
-                Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [Image(image: AssetImage("images/logochacecomcolor.png"), height: 90.0)])),
-              ])),
+            height: 330,
+            decoration: BoxDecoration(
+              color: Colors.red[200],
+              borderRadius: BorderRadius.circular(13.0),
+              boxShadow: const [BoxShadow(color: Colors.black87, offset: Offset(1.3, 2.0), blurRadius: 5.0, spreadRadius: 1.0, blurStyle: BlurStyle.normal)],
+              image: DecorationImage(image: AssetImage("images/editlogochacecom.png"), fit: BoxFit.cover),
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                    left: 10.0,
+                    top: 10.0,
+                    child: Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 0.5, color: Colors.white))),
+                Positioned(
+                    left: 12.0,
+                    top: 48.0,
+                    child: Text("CHACE COM",
+                        style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: Colors.red.shade200, letterSpacing: 1.1))),
+                Positioned(right: 08.0, bottom: 06.0, child: Text("Your partner COM", style: TextStyle(fontSize: 12.0, fontStyle: FontStyle.italic, color: Colors.white))),
+              ],
+            ),
+          ),
 
-          /// Header of the page
+          /// SIMPLE Header of the page
+          // Container(
+          //     margin: const EdgeInsets.only(top: 20.0),
+          //     padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+          //     height: 130.0,
+          //     decoration: BoxDecoration(
+          //         color: Colors.white,
+          //         borderRadius: BorderRadius.circular(20.0),
+          //         border: Border.all(color: Colors.black26, width: 2.8),
+          //         boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.0, 2.0), blurRadius: 3.0, spreadRadius: 1.2, blurStyle: BlurStyle.normal)]),
+          //     child: const Row(children: [
+          //       Expanded(
+          //           flex: 3,
+          //           child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
+          //             Text("CHACE COM", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 1.1)),
+          //             Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 1.1))
+          //           ])),
+          //       Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [Image(image: AssetImage("images/logochacecomcolor.png"), height: 90.0)])),
+          //     ])),
+
+          /// Chacecom items list
           Container(
-            padding: const EdgeInsets.only(top: 10.0),
+            margin: const EdgeInsets.only(top: 10.0),
             child: ChaceComItems(),
           ),
         ],
