@@ -25,11 +25,19 @@ class ChaceComItem {
     _price = value;
   }
 
+  // Icon _itemIcon;
+  //
+  // Icon get itemIcon => _itemIcon;
+  //
+  // set itemIcon(Icon value) {
+  //   _itemIcon = value;
+  // }
+
   ChaceComItem(this._label, this._description, this._price);
+// ChaceComItem(this._label, this._description, this._price, this._itemIcon);
 }
 
-class NavigationMenuItem{
-
+class NavigationMenuItem {
   // String _icon;
   //
   // String get icon => _icon;
@@ -53,6 +61,7 @@ class NavigationMenuItem{
   set label(String value) {
     _label = value;
   }
+
   String _target;
 
   String get target => _target;

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../types/types.dart';
 
-class ChaceComItemLayout extends StatelessWidget {
+class ChaceComItemW extends StatelessWidget {
   String label;
   String description;
   double? price;
+  Icon? icon;
 
-  ChaceComItemLayout({super.key, required this.label, this.description = "No description provided", this.price = 00.0});
+  ChaceComItemW({super.key, required this.label, this.description = "No description provided", this.price = 00.0, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +22,12 @@ class ChaceComItemLayout extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(flex: 1, child: CircleAvatar(child: Text(label[0]))
-              // child: Image(image: AssetImage("images/chacecomlogo.png"), height: 50.0),
-              ),
+          Expanded(
+            flex: 1,
+            // child: CircleAvatar(child: Text(label[0])),
+            // child: Image(image: AssetImage("images/chacecomlogo.png"), height: 50.0),
+            child: Icon(Icons.add),
+          ),
           const Padding(padding: EdgeInsets.only(left: 3.0)),
           Expanded(
               flex: 3,
