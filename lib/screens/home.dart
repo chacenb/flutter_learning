@@ -509,7 +509,7 @@ class _HomeState extends State<Home> {
       ),
       drawer: Drawer(
         surfaceTintColor: Colors.red.shade400,
-        width: 233.0,
+        width: 250.0,
         child: NavigationMenu(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -636,11 +636,11 @@ class _HomeState extends State<Home> {
       //   ],
       // ),
       body: Container(
-        margin: EdgeInsets.fromLTRB(13.0, 20.0, 13.0, 10.0),
+        margin: const EdgeInsets.fromLTRB(13.0, 20.0, 13.0, 10.0),
         child: Column(
           children: [
             Container(
-                padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
                 height: 130.0,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -684,17 +684,17 @@ class _HomeState extends State<Home> {
                                     AssetImage("images/logochacecomcolor.png"),
                                 height: 90.0)
                           ])),
-                ])), // Header of the page
+                ])), /// Header of the page
             Expanded(
               flex: 2,
               child: Container(
-                margin: EdgeInsets.only(top: 10.0),
-                //  ListView.builder helps generate list of scrollable items
+                margin: const EdgeInsets.only(top: 10.0),
+                ///  ListView.builder helps generate list of scrollable items
                 child: ListView.builder(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20.0),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 20.0),
                     itemCount: chacecomItemsList.length,
                     itemBuilder: (context, i) {
-                      /* we can return a ListTile ()*/
+                      /// we can return a ListTile ()
                       // return ListTile(
                       //   leading: CircleAvatar(
                       //       child: Text(chacecomItemsList[i].label[0])),
@@ -706,7 +706,7 @@ class _HomeState extends State<Home> {
                       //   style: ListTileStyle.drawer,
                       // );
 
-                      /* Or return a Custom component ()*/
+                      /// Or return a Custom component ()
                       return ChaceComItemComponent(
                           label: chacecomItemsList[i].label,
                           description: chacecomItemsList[i].description,
@@ -720,7 +720,7 @@ class _HomeState extends State<Home> {
                 //           label: chacecomItemsList[i].label,
                 //           description: chacecomItemsList[i].description),
                 //   ],
-              ),
+              ), /// We iterate using ListView.Builder in dataset of chace com items
             ),
           ],
         ),
