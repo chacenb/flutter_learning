@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chace_test1/reusables/sideNavigationMenu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_libserialport/flutter_libserialport.dart';
-import '../reusables/chacecomitemcomponent.dart';
+import '../reusables/chacecomitems.dart';
 import '../types/types.dart';
 import '../reusables/chacelogonumbered.dart';
 
@@ -20,22 +20,6 @@ class _HomeState extends State<Home> {
   /* Members */
   int counter = 0;
   double GPSposition = 0.0;
-  List<ChaceComItem> chacecomItemsList = [
-    ChaceComItem("Banner", "Item description lorem ipsum ", 450),
-    ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99),
-    ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0),
-    ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0),
-    ChaceComItem("Pro. card", "Item description lorem ipsum ", 1200.0),
-    ChaceComItem("Banner", "Item description lorem ipsum ", 450),
-    ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99),
-    ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99),
-    ChaceComItem("Hat", "Item description lorem ipsum ", 890.0),
-    ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0),
-    ChaceComItem("Logo", "Item description lorem ipsum ", 80.0),
-    ChaceComItem("Badge", "Item description lorem ipsum ", 890.0),
-    ChaceComItem("Badge", "Item description lorem ipsum ", 890.0),
-    ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0),
-  ];
 
   /* Methods */
   getGPSpositions() => Random().nextDouble();
@@ -857,60 +841,34 @@ class _HomeState extends State<Home> {
       //     BottomNavigationBarItem(label: "", icon: Icon(Icons.add)),
       //   ],
       // ),
-      body: Container(
-        margin: const EdgeInsets.fromLTRB(13.0, 20.0, 13.0, 10.0),
-        child: Column(
-          children: [
-            Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-                height: 130.0,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    border: Border.all(color: Colors.black26, width: 2.8),
-                    boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.0, 2.0), blurRadius: 3.0, spreadRadius: 1.2, blurStyle: BlurStyle.normal)]),
-                child: const Row(children: [
-                  Expanded(
-                      flex: 3,
-                      child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
-                        Text("CHACE COM", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 1.1)),
-                        Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 1.1))
-                      ])),
-                  Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [Image(image: AssetImage("images/logochacecomcolor.png"), height: 90.0)])),
-                ])),
+      body: ListView(
+        padding: const EdgeInsets.all(10.0),
+        children: [
+          /// Header of the page
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+              height: 130.0,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                  border: Border.all(color: Colors.black26, width: 2.8),
+                  boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.0, 2.0), blurRadius: 3.0, spreadRadius: 1.2, blurStyle: BlurStyle.normal)]),
+              child: const Row(children: [
+                Expanded(
+                    flex: 3,
+                    child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text("CHACE COM", style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 1.1)),
+                      Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 1.1))
+                    ])),
+                Expanded(flex: 2, child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [Image(image: AssetImage("images/logochacecomcolor.png"), height: 90.0)])),
+              ])),
 
-            /// Header of the page
-            Expanded(
-              flex: 2,
-              child: Container(
-                margin: const EdgeInsets.only(top: 10.0),
-
-                ///  ListView.builder helps generate list of scrollable items
-                child: ListView.builder(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 30.0),
-                    itemCount: chacecomItemsList.length,
-                    itemBuilder: (context, i) {
-                      /// we can return a ListTile ()
-                      // return ListTile(
-                      //   leading: CircleAvatar(
-                      //       child: Text(chacecomItemsList[i].label[0])),
-                      //   title: Text(chacecomItemsList[i].label),
-                      //   subtitle: Text(chacecomItemsList[i].description),
-                      //   trailing: Text(
-                      //       "${chacecomItemsList[i].price.toString()} XAF"),
-                      //   tileColor: Colors.grey.shade200,
-                      //   style: ListTileStyle.drawer,
-                      // );
-
-                  /// Or return a Custom component ()
-                  return ChaceComItemComponent(label: chacecomItemsList[i].label, description: chacecomItemsList[i].description, price: chacecomItemsList[i].price);
-                }),
+          /// Header of the page
+          Container(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: ChaceComItems(),
           ),
-
-              /// We iterate using ListView.Builder in dataset of chace com items
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }

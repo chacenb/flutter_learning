@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../types/types.dart';
-import 'chacecomitemcomponent.dart';
+import 'chacecomitems.dart';
 
 class SideNavigationMenu extends StatelessWidget {
   List<NavigationMenuItem> navigationMenuItems = [
