@@ -36,25 +36,37 @@ class _ChaceComItemsState extends State<ChaceComItems> {
         itemCount: chacecomItemsList.length,
         itemBuilder: (context, i) {
           /// we can return a ListTile ()
-          // return ListTile(
-          //   leading: CircleAvatar(
-          //       child: Text(chacecomItemsList[i].label[0])),
-          //   title: Text(chacecomItemsList[i].label),
-          //   subtitle: Text(chacecomItemsList[i].description),
-          //   trailing: Text(
-          //       "${chacecomItemsList[i].price.toString()} XAF"),
-          //   tileColor: Colors.grey.shade200,
-          //   style: ListTileStyle.drawer,
+          // return Container(
+          //   margin: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
+          //   decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.circular(13.0),
+          //     boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.6, 2.8), blurRadius: 3.0, spreadRadius: 0.8, blurStyle: BlurStyle.normal)],
+          //   ),
+          //   child: ListTile(
+          //     leading: CircleAvatar(child: Text(chacecomItemsList[i].label[0])),
+          //     title: Text(chacecomItemsList[i].label, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0, height: 0.8)),
+          //     subtitle: Text("Price : ${chacecomItemsList[i].price.toString()} XAF",
+          //         style: const TextStyle(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 12)),
+          //     trailing: Icon(Icons.visibility, size: 25.0, color: Colors.black87),
+          //     visualDensity: VisualDensity.compact,
+          //     tileColor: Colors.grey,
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(15.0), /*side: BorderSide(color: Colors.grey, width: 1.3)*/
+          //     ),
+          //     onTap: () => print("TAPPED on chace com item"),
+          //     onLongPress: () => print("LONG PRESSED on chace com item"),
+          //   ),
           // );
 
           /// Or return a Custom component ()
           return Container(
             margin: EdgeInsets.fromLTRB(0, 8.0, 0, 0),
-            height: 80.0,
+            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+            // height: 80.0,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(13.0),
-              boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(1.6, 2.8), blurRadius: 3.0, spreadRadius: 0.8, blurStyle: BlurStyle.normal)],
+              boxShadow: const [BoxShadow(color: Colors.black26, offset: Offset(1.6, 2.8), blurRadius: 3.0, spreadRadius: 0.8, blurStyle: BlurStyle.normal)],
             ),
             child: Row(
               children: [
