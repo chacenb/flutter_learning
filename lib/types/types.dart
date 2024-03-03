@@ -25,6 +25,13 @@ class ChaceComItem {
     _price = value;
   }
 
+  bool _isPressed;
+
+  bool get isPressed => _isPressed;
+
+  set isPressed(bool value) {
+    _isPressed = value;
+  }
   // Icon _itemIcon;
   //
   // Icon get itemIcon => _itemIcon;
@@ -33,7 +40,8 @@ class ChaceComItem {
   //   _itemIcon = value;
   // }
 
-  ChaceComItem(this._label, this._description, this._price);
+  ChaceComItem(this._label, this._description, this._price, this._isPressed);
+
 // ChaceComItem(this._label, this._description, this._price, this._itemIcon);
 }
 
