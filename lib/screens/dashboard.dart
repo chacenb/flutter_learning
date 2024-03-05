@@ -22,24 +22,40 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       /// page shared elements
-      appBar: chaceAppBar(context, 'Dashboard', false),
+      appBar: chaceAppBar(context: context, appBarTitle: 'Dashboard', hasBackArrow: false, hasActions: false),
       drawer: chaceSideDrawer(context, SIDE_DRAWER_SIZE),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: chaceFloatingActionButton(context, 'Add item'),
       bottomNavigationBar: chaceBottomAppBar(context, true),
 
+
       body: Center(
-        child: TextButton.icon(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.blue,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            /// stack Header of the page
+            height: 430,
+            decoration: BoxDecoration(
+              color: Colors.red[200],
+              borderRadius: BorderRadius.circular(13.0),
+              boxShadow: const [BoxShadow(color: Colors.black87, offset: Offset(1.3, 2.0), blurRadius: 5.0, spreadRadius: 1.0, blurStyle: BlurStyle.normal)],
+              image: DecorationImage(image: AssetImage("images/editlogochacecom.png"), fit: BoxFit.cover),
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                    left: 10.0,
+                    top: 10.0,
+                    child: Text("Order Visuals", style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w800, height: 0.9, letterSpacing: 0.5, color: Colors.white))),
+                Positioned(
+                    left: 12.0,
+                    top: 48.0,
+                    child: Text("CHACE COM",
+                        style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: Colors.red.shade200, letterSpacing: 1.1))),
+                Positioned(right: 08.0, bottom: 06.0, child: Text("Your partner COM", style: TextStyle(fontSize: 12.0, fontStyle: FontStyle.italic, color: Colors.white))),
+              ],
+            ),
           ),
-          onPressed: () {
-            /// Navigate from this screen to home screen
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-          },
-          icon: const Icon(FontAwesomeIcons.arrowRight, size: 12.0),
-          label: const Text("Go to home"),
-          // child: Text('TextButton'),
         ),
       ),
     );

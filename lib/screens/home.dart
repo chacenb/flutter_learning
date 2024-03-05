@@ -53,8 +53,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       /// page shared elements
-      appBar: chaceAppBar(context, 'Home', true),
-      drawer: chaceSideDrawer(context, SIDE_DRAWER_SIZE),
+      appBar: chaceAppBar(context: context, appBarTitle: 'Items', hasActions: true),
+      // drawer: chaceSideDrawer(context, SIDE_DRAWER_SIZE),
       floatingActionButton: chaceFloatingActionButton(context, 'Add item'),
 
       /// page content

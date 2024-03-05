@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chace_test1/screens/home.dart';
 
 import '../types/types.dart';
 
 class SideNavigationMenu extends StatelessWidget {
   List<NavigationMenuItem> navigationMenuItems = [
-    NavigationMenuItem(Icon(Icons.home), "home", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
-    NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    NavigationMenuItem(Icon(Icons.home), "home", Home()),
+    // NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.store), "Products", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
+    // NavigationMenuItem(Icon(Icons.contact_support_outlined), "About", "Item description lorem ipsum "),
   ];
 
   SideNavigationMenu({super.key});
@@ -34,9 +35,16 @@ class SideNavigationMenu extends StatelessWidget {
           otherAccountsPicturesSize: Size.square(13.0),
 
           otherAccountsPictures: [
-            Icon(Icons.account_box_rounded),
-            Icon(Icons.account_box_rounded),
-            Icon(Icons.account_box_rounded),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: IconButton(icon : Icon(Icons.account_circle), onPressed: () {  },),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: IconButton(icon : Icon(Icons.add_circle_outline), onPressed: () {  },),
+            // ),
+            Icon(Icons.add_circle_outline, color: Colors.white),
+            Icon(Icons.account_box_rounded, color: Colors.white,),
           ],
           currentAccountPicture: Image(image: AssetImage("images/logochacecomwhite.png")),
           // currentAccountPictureSize: Size(60.0, 60.0),
@@ -94,7 +102,18 @@ class SideNavigationMenu extends StatelessWidget {
         //   ),
         // ),
         for (int i = 0; i < navigationMenuItems.length; i += 1)
-          ListTile(leading: navigationMenuItems[i].icon, title: Text(navigationMenuItems[i].label), onTap: () => print("Getting to ${navigationMenuItems[i].label} page")),
+          ListTile(
+              leading: navigationMenuItems[i].icon,
+              title: Text(navigationMenuItems[i].label),
+              onTap: () {
+                print("Getting to ${navigationMenuItems[i].label} page");
+
+                /// Navigator.pop() will pop the Drawer route off the stack and cause it to close.
+                Navigator.pop(context);
+
+                /// Navigate from this screen to home screen
+                Navigator.push(context, MaterialPageRoute(builder: (context) => navigationMenuItems[i].target));
+              }),
       ],
     );
   }

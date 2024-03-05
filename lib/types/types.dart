@@ -70,11 +70,11 @@ class NavigationMenuItem {
     _label = value;
   }
 
-  String _target;
+  Widget _target;
 
-  String get target => _target;
+  Widget get target => _target;
 
-  set target(String value) {
+  set target(Widget value) {
     _target = value;
   }
 
