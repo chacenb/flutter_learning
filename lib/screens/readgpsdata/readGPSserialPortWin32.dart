@@ -21,8 +21,8 @@ class _ReadgpsdataspWin32State extends State<ReadgpsdataspWin32> {
     final List<PortInfo> portInfoLists = SerialPort.getPortsWithFullMessages();
     ports = SerialPort.getAvailablePorts();
 
-    print("portInfoLists are : ${portInfoLists}");
-    print("Available ports are : ${ports}");
+    print("portInfoLists are : $portInfoLists");
+    print("Available ports are : $ports");
     // if (ports.isNotEmpty) {
     //   port = SerialPort("COM3", openNow: false, ReadIntervalTimeout: 1, ReadTotalTimeoutConstant: 2);
     //   port.open();

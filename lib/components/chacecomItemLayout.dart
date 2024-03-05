@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../types/types.dart';
 
 class ChaceComItemW extends StatelessWidget {
   String label;

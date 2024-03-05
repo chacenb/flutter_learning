@@ -5,30 +5,35 @@ STOPPED AT | 1.5 - OK- Organize Your Flutter Code - Flutter Fat Arrows
 */
 
 import 'package:flutter/material.dart'; // we need to import this inside all the dart files we create
+import 'package:flutter_chace_test1/screens/dashboard.dart';
 import 'package:flutter_chace_test1/screens/readgpsdata/readGPSdataLibserialport.dart';
-import 'package:flutter_chace_test1/screens/readgpsdata/readGPSserialPortWin32.dart';
-import 'screens/readgpsdata/readGPSLibSerial.dart';
 import 'screens/home.dart';
-import 'screens/dashboard.dart';
 
-void main() => runApp(const ChaceClass1());
+void main() => runApp(const ChaceTestClass());
 
 /* shortcut to create a quick stateless(ful) class : type 'stless'('stful'), hit enter */
-class ChaceClass1 extends StatelessWidget {
-  const ChaceClass1({super.key});
+class ChaceTestClass extends StatelessWidget {
+  const ChaceTestClass({super.key});
+
+  // final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
+      // onGenerateRoute: generateRoute,
+      // navigatorKey: navigatorKey,
       title: 'App',
       themeMode: ThemeMode.system,
+
+      /// turns off the little debug tag that is on by default in the rendering of the app
       debugShowCheckedModeBanner: false,
-      // turns off the little debug tag that is on by default in the rendering of the app
+
+      /// different home screens
       // home: ReadgpsdataspWin32(title: 'Flutter Demo Home Page'),
       // home: ReadgpsdataLibSerial(),
       // home: ReadGPSdataLibserialport(),
-      // home: Dashboard(counter: 0,),
-      home: Home(),
+      home: Dashboard(),
+      // home: Home(),
     );
   }
 }
