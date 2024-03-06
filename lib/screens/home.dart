@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../components/appBar_sideMenu_downNav.dart';
 import '../components/chacecomitems.dart';
 import '../components/sideNavigationMenu.dart';
+import '../dummyData/dummyData.dart';
 import '../types/types.dart';
 
 class Home extends StatefulWidget {
@@ -18,22 +19,22 @@ class _HomeState extends State<Home> {
   /* Members */
   int counter = 0;
   double GPSposition = 0.0;
-  List<ChaceComItem> chacecomItemsList = [
-    ChaceComItem("Banner", "Item description lorem ipsum ", 450, false),
-    ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99, false),
-    ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0, false),
-    ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0, false),
-    ChaceComItem("Pro. card", "Item description lorem ipsum ", 1200.0, false),
-    ChaceComItem("Banner", "Item description lorem ipsum ", 450, false),
-    ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99, false),
-    ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99, false),
-    ChaceComItem("Hat", "Item description lorem ipsum ", 890.0, false),
-    ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0, false),
-    ChaceComItem("Logo", "Item description lorem ipsum ", 80.0, false),
-    ChaceComItem("Badge", "Item description lorem ipsum ", 890.0, false),
-    ChaceComItem("Badge", "Item description lorem ipsum ", 890.0, false),
-    ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0, false),
-  ];
+  // List<ChaceComItem> chacecomItemsList = [
+  //   ChaceComItem("Banner", "Item description lorem ipsum ", 450, false),
+  //   ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99, false),
+  //   ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0, false),
+  //   ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0, false),
+  //   ChaceComItem("Pro. card", "Item description lorem ipsum ", 1200.0, false),
+  //   ChaceComItem("Banner", "Item description lorem ipsum ", 450, false),
+  //   ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99, false),
+  //   ChaceComItem("FLyer", "Item description lorem ipsum ", 80.99, false),
+  //   ChaceComItem("Hat", "Item description lorem ipsum ", 890.0, false),
+  //   ChaceComItem("Umbrella", "Item description lorem ipsum ", 150.0, false),
+  //   ChaceComItem("Logo", "Item description lorem ipsum ", 80.0, false),
+  //   ChaceComItem("Badge", "Item description lorem ipsum ", 890.0, false),
+  //   ChaceComItem("Badge", "Item description lorem ipsum ", 890.0, false),
+  //   ChaceComItem("Rollup", "Item description lorem ipsum ", 1890.0, false),
+  // ];
 
   /* Methods */
   getGPSpositions() => Random().nextDouble();
@@ -91,7 +92,7 @@ class _HomeState extends State<Home> {
             margin: const EdgeInsets.only(top: 10.0),
 
             /// passing dynamic values to stateful widget
-            child: ChaceComItems(chacecomItemsList: chacecomItemsList),
+            child: ChaceComItems(chacecomItemsList: dummyData_chacecomItemsList),
           ),
         ],
       ),

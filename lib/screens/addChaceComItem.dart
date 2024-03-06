@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chace_test1/dummyData/dummyData.dart';
+import 'package:flutter_chace_test1/screens/home.dart';
+import 'package:flutter_chace_test1/types/types.dart';
 
 import '../components/appBar_sideMenu_downNav.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,6 +14,11 @@ class AddChaceComItem extends StatefulWidget {
 }
 
 class _AddChaceComItemState extends State<AddChaceComItem> {
+  String _itemName = "";
+  final _itemNameCtrl = TextEditingController();
+
+  // ChaceComItem ccitem = ChaceComItem();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,35 +32,57 @@ class _AddChaceComItemState extends State<AddChaceComItem> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text("CC Item", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, height: 1.1)),
-                const Text("Fill the form to add a new CHACE COM item"),
-                Padding(padding: EdgeInsets.all(20.0)),
-                // const Text("CC Item", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, height: 1.1)),
-                // const Text("Fill the form to add a new CHACE COM item"),
-                // TextField(
-                //   decoration: InputDecoration(hintText: "Ex: label", icon: Icon(Icons.abc)),
-                // ),
+                const Text(
+                  "Fill the form to add a new CHACE COM item",
+                  style: TextStyle(color: Colors.black54),
+                ),
+                const Padding(padding: EdgeInsets.all(20.0)),
                 TextFormField(
-                  decoration: InputDecoration(labelText: "Item name", prefixIcon: Icon(Icons.abc), border: OutlineInputBorder()),
+                  // onChanged: (value) => liveUpdateTextField(value),
+                  controller: _itemNameCtrl,
+                  decoration: const InputDecoration(
+                    labelText: "Item name",
+                    prefixIcon: Icon(Icons.abc),
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const Padding(padding: EdgeInsets.all(10.0)),
+                // Text("data filled in field is ${this._itemNameCtrl.text}"),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(onPressed: () => saveItem(context), child: Text("Save item")),
+                  ),
                 ),
               ],
             ),
           ],
         ),
       ),
-      // body: Center(
-      //   child: TextButton.icon(
-      //     style: TextButton.styleFrom(
-      //       foregroundColor: Colors.blue,
-      //     ),
-      //     onPressed: () {
-      //       /// Navigate from this screen to home screen
-      //       // Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-      //     },
-      //     icon: const Icon(FontAwesomeIcons.arrowRight, size: 12.0),
-      //     label:
-      //     // child: Text('TextButton'),
-      //   ),
-      // ),
     );
+  }
+
+  @override
+  void dispose() {
+    this._itemNameCtrl.dispose();
+    super.dispose();
+  }
+
+  dynamic saveItem(BuildContext context) {
+    print("item name length is ${_itemNameCtrl.text.length}");
+    if (_itemNameCtrl.text.length > 0) {
+      dummyData_chacecomItemsList.add(ChaceComItem(label: _itemNameCtrl.text)); //first add element to list
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Home())); //then navigate to home list screen
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text("Warning"),
+          content: Text("There are empty fields"),
+        ),
+      );
+      // ;
+    }
   }
 }

@@ -50,9 +50,9 @@ class _ChaceComItemsState extends State<ChaceComItems> {
       ),
       child: ListTile(
         leading: CircleAvatar(child: Text(widget.chacecomItemsList[i].label[0])),
-        title: Text(widget.chacecomItemsList[i].label, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0, height: 0.8)),
+        title: Text(widget.chacecomItemsList[i].label.toString(), style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0, height: 0.8)),
         subtitle: Text("Price : ${widget.chacecomItemsList[i].price.toString()} XAF", style: const TextStyle(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 12)),
-        trailing: (widget.chacecomItemsList[i].isPressed) ? (Icon(Icons.favorite, size: 25.0, color: Colors.red.shade400)) : (Icon(Icons.favorite_border, size: 25.0, color: Colors.black)),
+        trailing: (widget.chacecomItemsList[i].isPressed!) ? (Icon(Icons.favorite, size: 25.0, color: Colors.red.shade400)) : (Icon(Icons.favorite_border, size: 25.0, color: Colors.black)),
         visualDensity: VisualDensity.compact,
         tileColor: Colors.grey,
         shape: RoundedRectangleBorder(
@@ -60,7 +60,7 @@ class _ChaceComItemsState extends State<ChaceComItems> {
         ),
         onTap: () => setState(() {
           print("PRESSED chace com item [ListTile] before ${widget.chacecomItemsList[i].isPressed}");
-          widget.chacecomItemsList[i].isPressed = !widget.chacecomItemsList[i].isPressed;
+          widget.chacecomItemsList[i].isPressed = !widget.chacecomItemsList[i].isPressed!;
           print("PRESSED chace com item [ListTile] ${widget.chacecomItemsList[i].isPressed}");
         }),
         onLongPress: () => print("LONG PRESSED on chace com item"),

@@ -1,37 +1,38 @@
 import 'package:flutter/material.dart';
 
 class ChaceComItem {
-  String _label;
+  String label;
 
-  String get label => _label;
+  // String get label => _label;
+  //
+  // set label(String value) {
+  //   _label = value;
+  // }
 
-  set label(String value) {
-    _label = value;
-  }
+  String description;
 
-  String _description;
+  // String get description => _description;
+  //
+  // set description(String value) {
+  //   _description = value;
+  // }
 
-  String get description => _description;
+  double? price;
 
-  set description(String value) {
-    _description = value;
-  }
+  // double get price => _price;
+  //
+  // set price(double value) {
+  //   _price = value;
+  // }
 
-  double _price;
+  bool? isPressed;
 
-  double get price => _price;
+  // bool get isPressed => _isPressed;
+  //
+  // set isPressed(bool value) {
+  //   _isPressed = value;
+  // }
 
-  set price(double value) {
-    _price = value;
-  }
-
-  bool _isPressed;
-
-  bool get isPressed => _isPressed;
-
-  set isPressed(bool value) {
-    _isPressed = value;
-  }
   // Icon _itemIcon;
   //
   // Icon get itemIcon => _itemIcon;
@@ -40,7 +41,15 @@ class ChaceComItem {
   //   _itemIcon = value;
   // }
 
-  ChaceComItem(this._label, this._description, this._price, this._isPressed);
+  ChaceComItem({required this.label, this.description = "No description provided", this.price = 00.0, this.isPressed = false});
+// ChaceComItem(this._label, this._description, this._price, this._isPressed);
+//
+// ChaceComItem.labelOnly(String label, String? description) {
+//   _label = label;
+//   _description = " not provided";
+//   _price = 00.0;
+//   _isPressed = false;
+// }
 
 // ChaceComItem(this._label, this._description, this._price, this._itemIcon);
 }
