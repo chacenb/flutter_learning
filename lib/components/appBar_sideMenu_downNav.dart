@@ -65,7 +65,7 @@ BottomAppBar chaceBottomAppBar(BuildContext context, bool isNotched) {
                 style: const ButtonStyle(
                   foregroundColor: MaterialStatePropertyAll(Colors.white),
                 ),
-                icon: Icon(Icons.home)
+                icon: Icon(Icons.list_alt)
                 // child: Icon(Icons.bookmark),
                 )),
         Expanded(

@@ -31,10 +31,10 @@ class _AddChaceComItemState extends State<AddChaceComItem> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("CC Item", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, height: 1.1)),
+                const Text("CC Item", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900, height: 1.1)),
                 const Text(
                   "Fill the form to add a new CHACE COM item",
-                  style: TextStyle(color: Colors.black54),
+                  style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w700),
                 ),
                 const Padding(padding: EdgeInsets.all(20.0)),
                 TextFormField(
@@ -42,7 +42,7 @@ class _AddChaceComItemState extends State<AddChaceComItem> {
                   controller: _itemNameCtrl,
                   decoration: const InputDecoration(
                     labelText: "Item name",
-                    prefixIcon: Icon(Icons.abc),
+                    prefixIcon: Icon(FontAwesomeIcons.asymmetrik),
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -63,6 +63,7 @@ class _AddChaceComItemState extends State<AddChaceComItem> {
     );
   }
 
+  /// to avoid memory leak we need to dispose this
   @override
   void dispose() {
     this._itemNameCtrl.dispose();
