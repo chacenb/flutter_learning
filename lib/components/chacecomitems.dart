@@ -11,12 +11,10 @@ class ChaceComItems extends StatefulWidget {
   State<ChaceComItems> createState() => _ChaceComItemsState();
 }
 
-
 /* ************************************************************************************* */
 /* Added first interaction to ListView using ListTiles w/ stful widget  */
 /* ************************************************************************************* */
 class _ChaceComItemsState extends State<ChaceComItems> {
-
   bool isPressed = false;
 
   @override
@@ -28,7 +26,7 @@ class _ChaceComItemsState extends State<ChaceComItems> {
         itemCount: widget.chacecomItemsList.length,
         itemBuilder: (context, i) {
           /// we can return a local function that returns a ListTile ()
-          return chacecomListTileItem(i, isPressed);
+          return this.chacecomListTileItem(i, isPressed);
 
           /// Or return a Custom made component ()
           // return ChaceComItemW(
@@ -51,8 +49,11 @@ class _ChaceComItemsState extends State<ChaceComItems> {
       child: ListTile(
         leading: CircleAvatar(child: Text(widget.chacecomItemsList[i].label[0])),
         title: Text(widget.chacecomItemsList[i].label.toString(), style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0, height: 0.8)),
-        subtitle: Text("Price : ${widget.chacecomItemsList[i].price.toString()} XAF", style: const TextStyle(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 12)),
-        trailing: (widget.chacecomItemsList[i].isPressed!) ? (Icon(Icons.favorite, size: 25.0, color: Colors.red.shade400)) : (Icon(Icons.favorite_border, size: 25.0, color: Colors.black)),
+        subtitle: Text("Price : ${widget.chacecomItemsList[i].price.toString()} XAF",
+            style: const TextStyle(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic, color: Colors.white54, fontSize: 12)),
+        trailing: (widget.chacecomItemsList[i].isPressed!)
+            ? (Icon(Icons.favorite, size: 25.0, color: Colors.red.shade400))
+            : (Icon(Icons.favorite_border, size: 25.0, color: Colors.black)),
         visualDensity: VisualDensity.compact,
         tileColor: Colors.grey,
         shape: RoundedRectangleBorder(
@@ -67,5 +68,4 @@ class _ChaceComItemsState extends State<ChaceComItems> {
       ),
     );
   }
-
 }

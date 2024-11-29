@@ -2,44 +2,9 @@ import 'package:flutter/material.dart';
 
 class ChaceComItem {
   String label;
-
-  // String get label => _label;
-  //
-  // set label(String value) {
-  //   _label = value;
-  // }
-
   String description;
-
-  // String get description => _description;
-  //
-  // set description(String value) {
-  //   _description = value;
-  // }
-
   double? price;
-
-  // double get price => _price;
-  //
-  // set price(double value) {
-  //   _price = value;
-  // }
-
   bool? isPressed;
-
-  // bool get isPressed => _isPressed;
-  //
-  // set isPressed(bool value) {
-  //   _isPressed = value;
-  // }
-
-  // Icon _itemIcon;
-  //
-  // Icon get itemIcon => _itemIcon;
-  //
-  // set itemIcon(Icon value) {
-  //   _itemIcon = value;
-  // }
 
   ChaceComItem({required this.label, this.description = "No description provided", this.price = 00.0, this.isPressed = false});
 // ChaceComItem(this._label, this._description, this._price, this._isPressed);
